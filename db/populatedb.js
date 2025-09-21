@@ -1,4 +1,5 @@
 const { Client } = require("pg");
+
 require("dotenv").config();
 
 const SQL = `
@@ -11,7 +12,7 @@ last_name VARCHAR(50) NOT NULL,
 username VARCHAR(255) NOT NULL UNIQUE,
 password VARCHAR(255) NOT NULL,
 membership_status BOOLEAN DEFAULT FALSE,
-admin_status BOOLEAN DEFAULT FALSE,
+admin_status BOOLEAN DEFAULT FALSE
 
 );
 
@@ -25,4 +26,32 @@ timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 
 );
 
+INSERT INTO users (first_name, last_name, username, password, membership_status, admin_status)
+VALUES ('admin', 'admin', 'admin@admin.com', 'password1', true, true);
+
 `;
+
+async function main() {
+  console.log("Seeding....");
+
+  const connectionString = `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`;
+
+  if (!connectionString) {
+    console.error("Error: Error with connection string");
+    process.exit(1);
+  }
+
+  const client = new Client({ connectionString });
+
+  try {
+    await client.connect();
+    await client.query(SQL);
+  } catch (error) {
+    console.error("Error seeding database:", error);
+  } finally {
+    await client.end();
+    console.log("Finished creating tables and adding test admin");
+  }
+}
+
+main();
