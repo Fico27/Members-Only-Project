@@ -3,19 +3,19 @@ const bcrypt = require("bcryptjs");
 
 function getSignup(req, res) {
   try {
-    return res.render("/sign-up");
+    return res.render("sign-up", { errors: "" });
   } catch (error) {
     res.status(500).send("Server Error: Page not loaded");
   }
 }
 
 async function postSignup(req, res) {
-  const { fname, lname, username, password, cpassword } = req.body;
+  const { fname, lname, email, password } = req.body;
 
   // Need to hash the password and make sure the passwords match.
   const hashedPassword = await bcrypt.hash(password, 10);
   try {
-    await db.createUser(fname, lname, username, hashedPassword);
+    await db.createUser(fname, lname, email, hashedPassword);
     return res.redirect("/login");
   } catch (error) {
     console.error("Error creating user:", error);
@@ -25,4 +25,5 @@ async function postSignup(req, res) {
 
 module.exports = {
   getSignup,
+  postSignup,
 };

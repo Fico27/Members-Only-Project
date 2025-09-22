@@ -3,6 +3,7 @@ const path = require("node:path");
 const session = require("express-session");
 const passport = require("passport");
 const loginRouter = require("./routes/loginRouter");
+const signupRouter = require("./routes/signupRouter");
 
 const app = express();
 
@@ -14,6 +15,7 @@ app.use(passport.session());
 app.use(express.urlencoded({ extended: false }));
 
 app.use("/", loginRouter);
+app.use("/signup", signupRouter);
 
 app.listen(3000, (error) => {
   if (error) {

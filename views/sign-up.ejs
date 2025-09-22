@@ -3,21 +3,41 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Log-in</title>
+    <title>Sign up</title>
   </head>
   <body>
     <main>
       <h2>Create an account here!</h2>
 
-      <form action="" method="post">
+      <% if (errors && errors.length > 0) { %>
+      <ul style="color: red">
+        <% errors.forEach(error => { %>
+        <li><%= error.msg %></li>
+        <% }) %>
+      </ul>
+      <% } %>
+
+      <form action="/signup" method="post">
         <label for="fname">First Name:</label>
-        <input type="text" name="fname" id="fname" required />
+        <input
+          type="text"
+          name="fname"
+          id="fname"
+          value="<%= formInfo ? formInfo.fname : '' %>"
+          required
+        />
 
         <label for="lname">Last name:</label>
-        <input type="text" name="lname" id="lname" required />
+        <input
+          type="text"
+          name="lname"
+          id="lname"
+          value="<%= formInfo ? formInfo.lname : '' %>"
+        />
 
         <label for="email">Username:</label>
-        <input type="email" name="email" id="email" required />
+        <input type="email" name="email" id="email" <%= formInfo ?
+        formInfo.email : '' %> required />
 
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" required />
@@ -25,7 +45,7 @@
         <label for="cpassword">Confirm Password:</label>
         <input type="password" name="cpassword" id="cpassword" required />
 
-        <button type="submit">Log-in</button>
+        <button type="submit">Sign up</button>
       </form>
     </main>
   </body>
