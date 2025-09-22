@@ -16,7 +16,7 @@ async function postSignup(req, res) {
   const hashedPassword = await bcrypt.hash(password, 10);
   try {
     await db.createUser(fname, lname, email, hashedPassword);
-    return res.redirect("/login");
+    return res.redirect("/");
   } catch (error) {
     console.error("Error creating user:", error);
     return res.status(500).send("Error creating user. Please contact support");

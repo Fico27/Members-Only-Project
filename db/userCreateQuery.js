@@ -1,9 +1,11 @@
 const pool = require("./pool");
 
+//createUser Creates a basic user that has no membership status
+// or admin status.
 async function createUser(fname, lname, username, password) {
   const client = await pool.connect();
   const queryText = `INSERT INTO users (first_name, last_name, username, password, membership_status, admin_status)
-    VALUES ($1, $2, $3, $3, $4, $5)`;
+    VALUES ($1, $2, $3, $4, $5, $6)`;
 
   try {
     await client.query("BEGIN");
