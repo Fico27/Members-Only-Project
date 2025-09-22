@@ -3,7 +3,7 @@ const bcrypt = require("bcryptjs");
 
 function getSignup(req, res) {
   try {
-    return res.render("sign-up", { errors: "" });
+    return res.render("sign-up", { errors: [], formInfo: {} });
   } catch (error) {
     res.status(500).send("Server Error: Page not loaded");
   }

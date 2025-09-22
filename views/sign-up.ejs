@@ -36,8 +36,14 @@
         />
 
         <label for="email">Username:</label>
-        <input type="email" name="email" id="email" <%= formInfo ?
-        formInfo.email : '' %> required />
+        <input
+          type="email"
+          name="email"
+          id="email"
+          value="<%= formInfo ?
+        formInfo.email : '' %>"
+          required
+        />
 
         <label for="password">Password:</label>
         <input type="password" name="password" id="password" required />
