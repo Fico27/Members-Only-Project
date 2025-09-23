@@ -1,5 +1,5 @@
 const { Client } = require("pg");
-
+const bcrypt = require("bcryptjs");
 require("dotenv").config();
 
 const SQL = `
@@ -25,10 +25,6 @@ message TEXT NOT NULL,
 timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 
 );
-
-INSERT INTO users (first_name, last_name, username, password, membership_status, admin_status)
-VALUES ('admin', 'admin', 'admin@admin.com', 'password1', true, true);
-
 `;
 
 async function main() {
@@ -46,6 +42,13 @@ async function main() {
   try {
     await client.connect();
     await client.query(SQL);
+    // add basic admin user for testing
+    const hashedPassword = await bcrypt.hash("password", 10);
+    await client.query(
+      `INSERT INTO users (first_name, last_name, username, password, membership_status, admin_status) 
+      VALUES ($1,$2,$3,$4,$5,$6)`,
+      ["admin", "admin", "admin@admin.com", hashedPassword, true, true]
+    );
   } catch (error) {
     console.error("Error seeding database:", error);
   } finally {
