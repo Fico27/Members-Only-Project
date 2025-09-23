@@ -5,10 +5,17 @@ function getLogin(req, res) {
 }
 
 function postLogin(req, res, next) {
-  passport.authenticate("local", {
-    successRedirect: "/dashboard", //fix this to point to homepage/message board when created.
-    failureRedirect: "/",
-    failureFlash: false,
+  passport.authenticate("local", (err, user, info) => {
+    if (err) return next(err);
+    if (!user) {
+      return res.status(401).render("log-in", {
+        errors: [{ msg: info?.message || "Invalid credentials" }],
+      });
+    }
+    req.logIn(user, (err) => {
+      if (err) return next(err);
+      return res.redirect("/dashboard");
+    });
   })(req, res, next);
 }
 
