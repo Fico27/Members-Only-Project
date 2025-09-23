@@ -1,4 +1,4 @@
-function getLogin(req, res) {
+async function getLogin(req, res) {
   return res.render("log-in");
 }
 
