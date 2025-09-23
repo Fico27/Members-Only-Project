@@ -46,7 +46,7 @@ async function main() {
     const hashedPassword = await bcrypt.hash("password", 10);
     await client.query(
       `INSERT INTO users (first_name, last_name, username, password, membership_status, admin_status) 
-      VALUES ($1,$2,$3,$4,$5,$6)`,
+      VALUES ($1,$2,$3,$4,$5,$6) ON CONFLICT (username) DO NOTHING`,
       ["admin", "admin", "admin@admin.com", hashedPassword, true, true]
     );
   } catch (error) {
