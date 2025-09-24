@@ -4,6 +4,7 @@ const session = require("express-session");
 const passport = require("passport");
 const loginRouter = require("./routes/loginRouter");
 const signupRouter = require("./routes/signupRouter");
+const messageBoardRouter = require("./routes/messageBoardRouter");
 
 const app = express();
 
@@ -18,6 +19,7 @@ app.use(passport.session());
 
 app.use("/", loginRouter);
 app.use("/signup", signupRouter);
+app.use("/messageboard");
 
 app.listen(3000, (error) => {
   if (error) {
