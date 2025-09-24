@@ -19,7 +19,7 @@ app.use(passport.session());
 
 app.use("/", loginRouter);
 app.use("/signup", signupRouter);
-app.use("/messageboard");
+app.use("/messageboard", messageBoardRouter);
 
 app.listen(3000, (error) => {
   if (error) {

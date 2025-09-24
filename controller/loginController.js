@@ -14,7 +14,7 @@ function postLogin(req, res, next) {
     }
     req.logIn(user, (err) => {
       if (err) return next(err);
-      return res.redirect("/dashboard");
+      return res.redirect("/messageboard");
     });
   })(req, res, next);
 }
