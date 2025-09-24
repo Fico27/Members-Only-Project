@@ -24,7 +24,12 @@ title VARCHAR(255) NOT NULL,
 message TEXT NOT NULL,
 timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 
+
+
 );
+
+INSERT INTO messages (user_id, title, message)
+VALUES (4, 'I am a test', 'TESTING TESTING 123');
 `;
 
 async function main() {

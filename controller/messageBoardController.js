@@ -1,5 +1,14 @@
-function getMessageBoard(req, res) {
-  res.render("message-board");
+const db = require("../db/queryMessages");
+
+async function getMessageBoard(req, res) {
+  try {
+    const messages = await db.getAllMessages();
+
+    return res.render("message-board", { messages });
+  } catch (error) {
+    console.error("Error getting messages", error);
+    return res.status(500).send("Server error");
+  }
 }
 
 module.exports = {
