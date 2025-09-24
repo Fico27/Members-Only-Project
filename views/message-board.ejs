@@ -26,10 +26,11 @@
       <div class="message-container">
         <% messages.forEach((message) => { %>
         <div class="message">
-          <h3><%message.title %></h3>
+          <h2><%message.title %></h2>
           <p><%= message.message %></p>
           <% if(user && user.membership_status) { %>
           <p>Posted by:<%= user.first_name %> <%= user.last_name %></p>
+          <sub style="display: block"><%= message.timestamp %></sub>
           <% }%> <% if(user.admin_status){ %>
           <button>Delete</button>
           <%} %> <% }) %> <% } %>
