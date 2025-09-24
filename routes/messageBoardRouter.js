@@ -1,7 +1,8 @@
 const { Router } = require("express");
 const messageBoardRouter = Router();
 const messageBoardController = require("../controller/messageBoardController");
+const isAuth = require("../middleware/isAuthenticated");
 
-messageBoardRouter.get("/", messageBoardController.getMessageBoard);
+messageBoardRouter.get("/", isAuth, messageBoardController.getMessageBoard);
 
 module.exports = messageBoardRouter;
