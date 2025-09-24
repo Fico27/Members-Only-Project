@@ -19,6 +19,22 @@
     </header>
     <main>
       <!--Populate the page with messages here -->
+
+      <% if(messages.length === 0) {%>
+      <p>No messages posted. Go ahead and post one!</p>
+      <% } else { %>
+      <div class="message-container">
+        <% messages.forEach((message) => { %>
+        <div class="message">
+          <h3><%message.title %></h3>
+          <p><%= message.message %></p>
+          <% if(user && user.membership_status) { %>
+          <p>Posted by:<%= user.first_name %> <%= user.last_name %></p>
+          <% }%> <% if(user.admin_status){ %>
+          <button>Delete</button>
+          <%} %> <% }) %> <% } %>
+        </div>
+      </div>
     </main>
   </body>
 </html>
