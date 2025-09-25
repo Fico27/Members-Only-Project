@@ -3,7 +3,7 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>Become a member</title>
+    <title>Become an Admin</title>
   </head>
   <body>
     <header>
@@ -15,15 +15,15 @@
       </div>
     </header>
     <main>
-      <form action="/newmember" method="post">
-        <h2>Become a Member here!</h2>
+      <form action="/newadmin" method="post">
+        <h2>Become an Admin here!</h2>
         <p>You just need to know the <i>password</i>!</p>
         <% if (message) { %>
         <p style="color: red"><%= message%></p>
         <% } %>
 
-        <label for="password">Enter the Secret Password</label>
-        <input type="password" name="password" id="password" />
+        <label for="password">Enter the Secret Admin Password</label>
+        <input type="password" name="password" id="assword" />
 
         <button type="submit">Submit</button>
       </form>

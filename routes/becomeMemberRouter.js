@@ -5,6 +5,5 @@ const isAuth = require("../middleware/isAuthenticated");
 
 becomeMemberRouter.get("/", isAuth, becomeMemberController.getBecomeMember);
 becomeMemberRouter.post("/", becomeMemberController.postBecomeMember);
-becomeMemberRouter.post("/", becomeMemberController.postBecomeAdmin);
 
 module.exports = becomeMemberRouter;
