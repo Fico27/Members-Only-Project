@@ -6,6 +6,7 @@ const loginRouter = require("./routes/loginRouter");
 const signupRouter = require("./routes/signupRouter");
 const messageBoardRouter = require("./routes/messageBoardRouter");
 const createMessageRouter = require("./routes/createMessageRouter");
+const becomeMemberRouter = require("./routes/becomeMemberRouter");
 
 const app = express();
 
@@ -22,6 +23,7 @@ app.use("/", loginRouter);
 app.use("/signup", signupRouter);
 app.use("/messageboard", messageBoardRouter);
 app.use("/newmessage", createMessageRouter);
+app.use("/newmember", becomeMemberRouter);
 
 app.listen(3000, (error) => {
   if (error) {
