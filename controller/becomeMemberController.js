@@ -25,4 +25,5 @@ async function postBecomeMember(req, res) {
 
 module.exports = {
   getBecomeMember,
+  postBecomeMember,
 };
