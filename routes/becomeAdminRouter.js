@@ -4,6 +4,6 @@ const becomeAdminController = require("../controller/becomeAdminController");
 const isAuth = require("../middleware/isAuthenticated");
 
 becomeAdminRouter.get("/", isAuth, becomeAdminController.getBecomeAdmin);
-becomeAdminRouter.post("/", becomeAdminController.postBecomeAdmin);
+becomeAdminRouter.post("/", isAuth, becomeAdminController.postBecomeAdmin);
 
 module.exports = becomeAdminRouter;
