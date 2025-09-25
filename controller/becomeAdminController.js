@@ -17,7 +17,7 @@ async function postBecomeAdmin(req, res) {
       return res.status(500).send("Error becoming an admin. Try again.");
     }
   } else {
-    return res.render("become-member", {
+    return res.render("become-admin", {
       message:
         "Incorrect password. You aren't worthy... to become one of the message board gods",
     });
