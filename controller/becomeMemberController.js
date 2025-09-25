@@ -10,7 +10,7 @@ async function postBecomeMember(req, res) {
   const secretPassword = "greedisgood";
   if (password === secretPassword) {
     try {
-      await db.becomeMember(user);
+      await db.becomeMember(user.id);
       return res.redirect("/messageboard");
     } catch (error) {
       console.error("Error becoming member", error);
