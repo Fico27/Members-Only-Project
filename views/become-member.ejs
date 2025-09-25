@@ -18,7 +18,11 @@
       <h2>Become a member here!</h2>
       <p>You just need to know the <i>password</i>!</p>
 
-      <form action="/newmessage" method="post">
+      <form action="/newmember" method="post">
+        <% if (message) { %>
+        <p style="color: red"><%= message%></p>
+        <% } %>
+
         <label for="password">Enter the Secret Password</label>
         <input type="password" name="password" id="password" />
 
