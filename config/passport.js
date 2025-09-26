@@ -30,7 +30,7 @@ passport.use(
         const isMatch = await bcrypt.compare(password, user.password);
 
         if (!isMatch) {
-          return done(null, false, { message: "Invalid username or pasword" });
+          return done(null, false, { message: "Invalid username or password" });
         }
 
         return done(null, user);
