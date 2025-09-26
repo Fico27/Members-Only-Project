@@ -40,12 +40,20 @@ a:link {
 .message-container {
   display: flex;
   flex-direction: column;
+  width: 60%;
 }
 .message {
   display: flex;
   flex-direction: column;
   justify-content: center;
   margin-bottom: 1rem;
-  align-items: center;
+  align-items: start;
   border-bottom: 2px solid black;
+  padding-bottom: 1rem;
+}
+
+p {
+  width: 100%;
+  text-wrap: wrap;
+  margin: 0;
 }
