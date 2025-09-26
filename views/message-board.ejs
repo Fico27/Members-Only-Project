@@ -32,7 +32,9 @@
           <p>Posted by:<%= user.first_name %> <%= user.last_name %></p>
           <sub style="display: block"><%= message.timestamp %></sub>
           <% }%> <% if(user.admin_status){ %>
-          <button>Delete</button>
+          <form action="/messageboard/delete/:message.message_id">
+            <button type="submit">Delete</button>
+          </form>
           <%} %> <% }) %> <% } %>
         </div>
       </div>
