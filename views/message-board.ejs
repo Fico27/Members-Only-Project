@@ -33,7 +33,7 @@
           <sub style="display: block"><%= message.timestamp %></sub>
           <% }%> <% if(user.admin_status){ %>
           <form
-            action="/messageboard/delete/:<%=message.message_id%>"
+            action="/messageboard/delete/<%=message.message_id%>"
             method="post"
           >
             <button type="submit">Delete</button>
