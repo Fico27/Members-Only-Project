@@ -8,7 +8,7 @@
   </head>
   <body>
     <header>
-      <h1><i>The</i> Anon Club</h1>
+      <h1><i>The</i> Member Club</h1>
       <ul>
         <li><a href="/newmessage">New Message</a></li>
         <li>
@@ -28,14 +28,14 @@
           <h2><%=message.title %></h2>
           <p><%= message.message %></p>
           <% if(user && user.membership_status) { %>
-          <p>Posted by: <%= user.first_name %> <%= user.last_name %></p>
-          <sub style="display: block"><%= message.timestamp %></sub>
+          <p><b>Posted by: </b> <%= user.first_name %> <%= user.last_name %></p>
+          <b><sub style="display: block"><%= message.timestamp %></sub></b>
           <% }%> <% if(user.admin_status){ %>
           <form
             action="/messageboard/delete/<%=message.message_id%>"
             method="post"
           >
-            <button type="submit">Delete</button>
+            <button class="delete" type="submit">Delete</button>
           </form>
           <%} %>
         </div>

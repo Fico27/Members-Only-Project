@@ -1,59 +1,132 @@
 body,
 html {
+  margin: 0;
+  padding: 0;
   width: 100%;
   height: 100%;
-}
-
-main {
-  width: 100%;
-  height: 100%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
+  font-family: Arial, sans-serif;
+  background-color: #f4f4f4;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 1rem 2rem;
+  background-color: #ffffff;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
-  margin-left: 1rem;
+  margin: 0;
+  font-size: 1.8rem;
+  color: #333;
 }
+
 ul {
   list-style: none;
   display: flex;
-  text-decoration: none;
+  margin: 0;
+  padding: 0;
 }
+
 li {
-  margin: 0 0.5rem;
+  margin: 0 1rem;
 }
 
-a:link {
+a:link,
+a:visited {
   text-decoration: none;
+  color: #007bff;
+  font-weight: 500;
 }
 
-/* End of main? */
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+main {
+  max-width: 800px;
+  margin: 2rem auto;
+  padding: 0 1rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+p[style="color: red"] {
+  background-color: #ffe6e6;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  margin-bottom: 1rem;
+  width: 100%;
+  text-align: center;
+}
 
 .message-container {
+  width: 100%;
   display: flex;
   flex-direction: column;
-  width: 60%;
-}
-.message {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  margin-bottom: 1rem;
-  align-items: start;
-  border-bottom: 2px solid black;
-  padding-bottom: 1rem;
+  gap: 1rem;
 }
 
-p {
-  width: 100%;
-  text-wrap: wrap;
-  margin: 0;
+.message {
+  background-color: #ffffff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  padding: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.message h2 {
+  margin: 0 0 0.5rem;
+  font-size: 1.4rem;
+  color: #333;
+}
+
+.message p {
+  margin: 0 0 0.5rem;
+  color: #555;
+  line-height: 1.5;
+  word-break: break-all;
+}
+
+.message sub {
+  color: #777;
+  font-size: 0.9rem;
+}
+
+.message form {
+  display: inline;
+}
+
+.message button {
+  background-color: #dc3545;
+  color: white;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 4px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  float: right;
+}
+
+.message button:hover {
+  background-color: #c82333;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 0 0.5rem;
+  }
+  .message-container {
+    width: 100%;
+  }
+  h1 {
+    font-size: 1.5rem;
+  }
+  li {
+    margin: 0 0.5rem;
+  }
 }
