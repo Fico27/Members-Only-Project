@@ -93,6 +93,7 @@ p[style="color: red"] {
 }
 
 .message sub {
+  display: block;
   color: #777;
   font-size: 0.9rem;
 }
