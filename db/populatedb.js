@@ -28,14 +28,16 @@ timestamp TIMESTAMP WITH TIME ZONE DEFAULT CURRENT_TIMESTAMP
 
 );
 
-INSERT INTO messages (user_id, title, message)
-VALUES (4, 'I am a test', 'TESTING TESTING 123');
+
 `;
 
 async function main() {
   console.log("Seeding....");
 
-  const connectionString = `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`;
+  // Old used for local.
+  // const connectionString = `postgres://${process.env.DB_USER}:${process.env.DB_PASSWORD}@${process.env.DB_HOST}:${process.env.DB_PORT}/${process.env.DB_DATABASE}`;
+
+  const connectionString = process.env.DATABASE_URL;
 
   if (!connectionString) {
     console.error("Error: Error with connection string");
