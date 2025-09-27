@@ -4,23 +4,26 @@ html {
   padding: 0;
   width: 100%;
   height: 100%;
-  font-family: Arial, sans-serif;
-  background-color: #f4f4f4;
+  font-family: "Helvetica Neue", Arial, sans-serif;
+  background-color: #f8f9fa;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
 }
 
 header {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1rem 2rem;
+  padding: 1.5rem 2rem;
   background-color: #ffffff;
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 h1 {
   margin: 0;
-  font-size: 1.8rem;
-  color: #333;
+  font-size: 2rem;
+  color: #2c3e50;
 }
 
 ul {
@@ -31,17 +34,121 @@ ul {
 }
 
 li {
-  margin: 0 1rem;
+  margin: 0 1.5rem;
 }
 
 a:link,
 a:visited {
   text-decoration: none;
   color: #007bff;
-  font-weight: 500;
+  font-weight: 600;
+  font-size: 1.1rem;
 }
 
 a:hover {
   color: #0056b3;
   text-decoration: underline;
+}
+
+main {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 2rem;
+  max-width: 600px;
+  margin: 0 auto;
+}
+
+form {
+  width: 100%;
+  max-width: 500px;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+h2 {
+  margin: 0;
+  font-size: 1.8rem;
+  color: #2c3e50;
+  text-align: center;
+}
+
+p {
+  margin: 0;
+  font-size: 1.1rem;
+  color: #555;
+  text-align: center;
+}
+
+.error {
+  background-color: #ffe6e6;
+  color: #dc3545;
+  padding: 0.8rem;
+  border-radius: 4px;
+  font-size: 1rem;
+  text-align: center;
+}
+
+label {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #2c3e50;
+}
+
+input {
+  width: 100%;
+  padding: 0.8rem;
+  border: 1px solid #ced4da;
+  border-radius: 4px;
+  font-size: 1.1rem;
+  box-sizing: border-box;
+}
+
+input:focus {
+  outline: none;
+  border-color: #007bff;
+  box-shadow: 0 0 5px rgba(0, 123, 255, 0.3);
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 600px) {
+  main {
+    padding: 1rem;
+  }
+  form {
+    padding: 1.5rem;
+  }
+  h2 {
+    font-size: 1.6rem;
+  }
+  label,
+  input,
+  button,
+  p {
+    font-size: 1rem;
+  }
+  button {
+    padding: 0.7rem 1.5rem;
+  }
 }
