@@ -28,7 +28,10 @@
           <h2><%=message.title %></h2>
           <p><%= message.message %></p>
           <% if(user && user.membership_status) { %>
-          <p><b>Posted by: </b> <%= user.first_name %> <%= user.last_name %></p>
+          <p>
+            <b>Posted by: </b> <%= message.first_name %> <%= message.last_name
+            %>
+          </p>
           <b><sub><%= message.timestamp %></sub></b>
           <% }%> <% if(user.admin_status){ %>
           <form
