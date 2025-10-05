@@ -51,7 +51,7 @@ button {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s;
-  margin: 0.5rem auto;
+  margin: 0.7rem auto;
 }
 
 button:hover {

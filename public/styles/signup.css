@@ -51,7 +51,7 @@ button {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s;
-  margin: 0.5rem auto;
+  margin: 0.7rem auto;
 }
 
 button:hover {
@@ -61,7 +61,7 @@ button:hover {
 form {
   display: flex;
   flex-direction: column;
-  height: 80%;
+  height: 70%;
   width: 100%;
   max-width: 600px;
   background-color: #ffffff;
@@ -93,7 +93,7 @@ label {
 }
 
 input {
-  width: 50%;
+  width: 100%;
   padding: 0.4rem;
   border: 1px solid #ced4da;
   border-radius: 4px;
