@@ -23,11 +23,47 @@ label {
   margin: 0.5rem 0;
 }
 
-button {
-  margin: 0.5rem auto;
-}
-
 sub {
   font-size: 1rem;
   margin: 0 auto;
+}
+
+a:link,
+a:visited {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: 600;
+  font-size: 1.1rem;
+}
+
+a:hover {
+  color: #0056b3;
+  text-decoration: underline;
+}
+
+button {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 0.8rem 2rem;
+  border-radius: 4px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+button:hover {
+  background-color: #0056b3;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  max-width: 600px;
+  background-color: #ffffff;
+  padding: 2rem;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
 }
