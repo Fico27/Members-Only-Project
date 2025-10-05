@@ -51,6 +51,7 @@ button {
   font-weight: bold;
   cursor: pointer;
   transition: background-color 0.2s;
+  margin: 0.5rem auto;
 }
 
 button:hover {
@@ -60,7 +61,7 @@ button:hover {
 form {
   display: flex;
   flex-direction: column;
-  height: 50%;
+  height: 80%;
   max-width: 600px;
   background-color: #ffffff;
   padding: 2rem;
