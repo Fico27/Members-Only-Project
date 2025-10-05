@@ -93,8 +93,8 @@ label {
 }
 
 input {
-  width: 100%;
-  padding: 0.8rem;
+  width: 50%;
+  padding: 0.4rem;
   border: 1px solid #ced4da;
   border-radius: 4px;
   font-size: 1.1rem;
